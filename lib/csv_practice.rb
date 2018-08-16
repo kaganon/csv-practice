@@ -5,7 +5,12 @@ require 'awesome_print'
 # Part 1 - CSV Practice
 def load_data(filename)
 
+  athlete_array = CSV.read(filename, headers: true).map do |athlete|
+      athlete.to_h
+  end
+  return athlete_array
 end
+
 
 def total_medals_per_country(olympic_data)
 
